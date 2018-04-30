@@ -3,18 +3,22 @@ package br.ufg.inf.es.integracao.topico2;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+/**
+ * Esta classe implementa a primeira atividade do tópico 2. Nela é esperado um erro 
+ * "NotSerializableException" porque a ClasseTestes() não implementa "Serializable".
+ * 
+ */
 
-
-public class Serializador {
+public class RetornarErro {
 
     public static void main(String[] args) throws IOException {
-        ClasseTeste classeTeste = new ClasseTeste();
-        classeTeste.variavel1 = 1;
-        gravadorObjeto(classeTeste);
+        ClasseTestes classeTestes = new ClasseTestes();
+        classeTestes.variavel1 = 1;
+        gravadorObjeto(classeTestes);
 
     }
 
-    public static class ClasseTeste {
+    public static class ClasseTestes {
         int variavel1;
     }
 

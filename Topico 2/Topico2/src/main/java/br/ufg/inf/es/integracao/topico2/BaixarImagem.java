@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.ufg.inf.es.integracao.topico2;
 
 import com.google.gson.Gson;
@@ -23,8 +18,9 @@ import java.util.Map;
 import javax.imageio.ImageIO;
 
 /**
- *
- * @author david
+ * Este arquivo faz várias coisas: primeiro ele acessa a API do GitHub e obtém dela o JSON.
+ * Logo depois essa imagem será persistida num arquivo. 
+ * 
  */
 public class BaixarImagem {
 
@@ -35,7 +31,6 @@ public class BaixarImagem {
         String json = getSessionKey();
         Map<String, Object> map = new HashMap<String, Object>();
         map = (Map<String, Object>) gson.fromJson(json, map.getClass());
-        System.out.println("]]]]]]]]]]]" + map);
 
         String myJSONString = getSessionKey();
         JsonObject jobj = new Gson().fromJson(myJSONString, JsonObject.class);
@@ -43,7 +38,7 @@ public class BaixarImagem {
         String result = jobj.get("avatar_url").getAsString();
 
         InputStream in = new URL(result).openStream();
-        Files.copy(in, Paths.get("C:\\Users\\david\\OneDrive\\Imagens\\lapa\\lapa.jpg"));
+        Files.copy(in, Paths.get("saida.jpg"));
 
     }
 

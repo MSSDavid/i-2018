@@ -4,12 +4,16 @@ import java.io.FileInputStream;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+/**
+ * Esta classe implementa a segunda parte segunda atividade do tópico 2. 
+ * Aqui um arquivo com informações de uma objeto virará um objeto novamente.
+ * 
+ */
 
-
-public class Segunda11 {
+public class Segunda2 {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        String saida = "C:\\Users\\Alunoinf_2\\Documents\\Nova pasta\\txt.txt";
+        String saida = "txt.txt";
         ClasseTeste classeteste = gravadorObjeto(saida);
          
         System.out.println(classeteste.variavel1);
